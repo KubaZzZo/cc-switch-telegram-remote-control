@@ -280,7 +280,7 @@ Areas to avoid carrying over directly:
 
 ## Next Implementation Step
 
-After approval, create `cc-switch-headless/` as a new independent folder and scaffold:
+The independent `cc-switch-headless/` folder now exists for this project. After approval, scaffold:
 
 1. Rust workspace with `ccs-core`, `ccs-server`, and `ccs-cli`.
 2. Minimal React Web app.

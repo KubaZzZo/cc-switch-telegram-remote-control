@@ -106,4 +106,4 @@ After this works, add Claude Code and Gemini using the same interfaces.
 
 ## Full Design Document
 
-See `docs/superpowers/specs/2026-06-01-cc-switch-headless-design.md`.
+See `cc-switch-headless/docs/superpowers/specs/2026-06-01-cc-switch-headless-design.md`.
