@@ -472,9 +472,7 @@ fn list_reply(state: &AppState, app: AppType) -> Result<BotReply, String> {
 
     let mut lines = vec![format!("{} 的供应商:", app_display_name(&app))];
     for provider in providers.values() {
-        let request_address =
-            provider_request_address(provider).unwrap_or_else(|| "未配置请求地址".to_string());
-        lines.push(format!("{}:{}", provider.name, request_address));
+        lines.push(provider_display_line(provider));
     }
     Ok(BotReply::new(
         lines.join("\n"),
@@ -487,7 +485,15 @@ fn current_reply(state: &AppState, app: AppType) -> Result<BotReply, String> {
     let text = if current.is_empty() {
         format!("{} 暂无当前供应商。", app_display_name(&app))
     } else {
-        format!("{} 当前供应商: {current}", app_display_name(&app))
+        let providers = ProviderService::list(state, app.clone()).map_err(|e| e.to_string())?;
+        match providers.get(&current) {
+            Some(provider) => format!(
+                "{} 当前供应商:\n{}",
+                app_display_name(&app),
+                provider_display_line(provider)
+            ),
+            None => format!("{} 当前供应商: {current}", app_display_name(&app)),
+        }
     };
     Ok(BotReply::new(text, Some(app_action_keyboard(&app))))
 }
@@ -533,6 +539,12 @@ fn app_display_name(app: &AppType) -> &'static str {
         AppType::OpenClaw => "OpenClaw",
         AppType::Hermes => "Hermes",
     }
+}
+
+fn provider_display_line(provider: &Provider) -> String {
+    let request_address =
+        provider_request_address(provider).unwrap_or_else(|| "未配置请求地址".to_string());
+    format!("{}:{}", provider.name, request_address)
 }
 
 fn provider_request_address(provider: &Provider) -> Option<String> {
@@ -865,5 +877,23 @@ mod tests {
         assert!(validate_restart_command("").is_err());
         assert!(validate_restart_command("codex\nwhoami").is_err());
         assert!(validate_restart_command(&"x".repeat(513)).is_err());
+    }
+
+    #[test]
+    fn provider_display_line_uses_request_address_without_api_key() {
+        let provider = Provider::with_id(
+            "deepseek".to_string(),
+            "DeepSeek".to_string(),
+            serde_json::json!({
+                "baseUrl": "https://api.deepseek.com/v1",
+                "apiKey": "sk-secret",
+            }),
+            None,
+        );
+
+        let line = provider_display_line(&provider);
+
+        assert_eq!(line, "DeepSeek:https://api.deepseek.com/v1");
+        assert!(!line.contains("sk-secret"));
     }
 }
