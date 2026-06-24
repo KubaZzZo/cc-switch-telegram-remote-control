@@ -2,7 +2,7 @@
 
 # CC Switch
 
-### Der All-in-One-Manager für Claude Code, Codex, Gemini CLI, OpenCode, OpenClaw & Hermes Agent
+### Der All-in-One-Manager für Claude Code, Claude Desktop, Codex, Gemini CLI, OpenCode, OpenClaw & Hermes Agent
 
 [![Version](https://img.shields.io/github/v/release/farion1231/cc-switch?color=blue&label=version)](https://github.com/farion1231/cc-switch/releases)
 [![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey.svg)](https://github.com/farion1231/cc-switch/releases)
@@ -24,11 +24,9 @@
 <details open>
 <summary>Zum Einklappen klicken</summary>
 
-[![MiniMax](assets/partners/banners/minimax-en.jpeg)](https://platform.minimax.io/subscribe/coding-plan?code=ClLhgxr2je&source=link)
+[![Kimi K2.6](https://kimi-file.moonshot.cn/prod-chat-kimi/kfs/4/2/2026-06-08/1d8j61pt3v89kkekm5mbg)](https://platform.moonshot.cn/console?aff=cc-switch)
 
-MiniMax-M2.7 ist ein großes Sprachmodell der nächsten Generation, das auf autonome Weiterentwicklung und praxisnahe Produktivität ausgelegt ist. Anders als herkömmliche Modelle beteiligt sich M2.7 aktiv an seiner eigenen Verbesserung — durch Agententeams, dynamische Werkzeugnutzung und Reinforcement-Learning-Schleifen. Es liefert starke Leistung im Software-Engineering (56,22 % bei SWE-Pro, 55,6 % bei VIBE-Pro, 57,0 % bei Terminal Bench 2) und überzeugt bei komplexen Büro-Workflows mit einem führenden Wert von 1495 ELO bei GDPval-AA. Mit originalgetreuer Bearbeitung von Word-, Excel- und PowerPoint-Dateien sowie einer Befolgungsrate von 97 % über 40+ komplexe Skills hinweg setzt M2.7 einen neuen Standard für den Aufbau KI-nativer Workflows und Organisationen.
-
-[Klicken Sie hier](https://platform.minimax.io/subscribe/coding-plan?code=ClLhgxr2je&source=link), um exklusive 12 % Rabatt auf den MiniMax Token Plan zu erhalten!
+Kimi K2.6 ist ein quelloffenes, nativ multimodales Agenten-Modell von Moonshot AI, das für langfristige Programmierung, code-getriebenes Design und schwarmbasierte Aufgabenorchestrierung entwickelt wurde. Es ist darauf ausgelegt, komplexe End-to-End-Engineering-Arbeiten über Frontend, DevOps, Performance-Optimierung und Full-Stack-Workflows hinweg zu bewältigen und dabei große Gruppen spezialisierter Agenten zu koordinieren, um echte Programmieraufgaben zu planen, umzusetzen, zu testen und zu iterieren. **[Hier klicken, um Kimi auszuprobieren](https://platform.moonshot.cn/console?aff=cc-switch)**
 
 ---
 
@@ -63,7 +61,7 @@ Registrieren Sie sich jetzt über <a href="https://pateway.ai/?ch=etzpm8&aff=WB6
 
 <tr>
 <td width="180"><a href="https://www.byteplus.com/en/product/modelark?utm_campaign=hw&utm_content=ccswitch&utm_medium=devrel_tool_web&utm_source=OWO&utm_term=ccswitch"><img src="assets/partners/logos/byteplus.png" alt="BytePlus" width="150"></a></td>
-<td>Danke an Dola seed für die Unterstützung dieses Projekts! Dola Seed 2.0 ist ein voll-modales Allzweck-Großmodell, das von ByteDance eigenständig für den globalen Markt entwickelt wurde. Aufbauend auf einer einheitlichen multimodalen Architektur unterstützt es das gemeinsame Verstehen und Generieren von Text, Bildern, Audio und Video. Es ermöglicht von Haus aus die Zusammenarbeit von Agenten und verfügt über starke Fähigkeiten in den Bereichen Schlussfolgern, Ausführung langer Aufgaben, Werkzeugintegration und Programmierung. Es ist breit einsetzbar — etwa für intelligente Cockpits, persönliche Assistenten, Bildung, Kundensupport, Marketing, Einzelhandel und weitere Szenarien. Es überzeugt bei multimodaler Wahrnehmung, der Ende-zu-Ende-Bewältigung komplexer Aufgaben, stabiler Interaktion und Datensicherheit und ist über die ModelArk-Plattform einfach zugänglich und bereitstellbar. Registrieren Sie sich über <a href="https://www.byteplus.com/en/product/modelark?utm_campaign=hw&utm_content=ccswitch&utm_medium=devrel_tool_web&utm_source=OWO&utm_term=ccswitch">diesen Link</a> und erhalten Sie pro Modell ein kostenloses Inferenzkontingent von 500.000 Token.<a href="https://www.volcengine.com/activity/agentplan?utm_campaign=hw&utm_content=ccswitch&utm_medium=devrel_tool_web&utm_source=OWO&utm_term=ccswitch"> >>中国大陆地区的开发者请点击这里</a></td>
+<td>Danke an Dola seed für die Unterstützung dieses Projekts! Dola Seed 2.0 ist ein voll-modales Allzweck-Großmodell, das von ByteDance eigenständig für den globalen Markt entwickelt wurde. Aufbauend auf einer einheitlichen multimodalen Architektur unterstützt es das gemeinsame Verstehen und Generieren von Text, Bildern, Audio und Video. Es ermöglicht von Haus aus die Zusammenarbeit von Agenten und verfügt über starke Fähigkeiten in den Bereichen Schlussfolgern, Ausführung langer Aufgaben, Werkzeugintegration und Programmierung. Es ist breit einsetzbar — etwa für intelligente Cockpits, persönliche Assistenten, Bildung, Kundensupport, Marketing, Einzelhandel und weitere Szenarien. Es überzeugt bei multimodaler Wahrnehmung, der Ende-zu-Ende-Bewältigung komplexer Aufgaben, stabiler Interaktion und Datensicherheit und ist über die ModelArk-Plattform einfach zugänglich und bereitstellbar. Registrieren Sie sich über <a href="https://www.byteplus.com/en/product/modelark?utm_campaign=hw&utm_content=ccswitch&utm_medium=devrel_tool_web&utm_source=OWO&utm_term=ccswitch">diesen Link</a> und erhalten Sie pro Modell ein kostenloses Inferenzkontingent von 500.000 Token.<a href="https://www.volcengine.com/activity/ai618?utm_campaign=hw&utm_content=hw&utm_medium=devrel_tool_web&utm_source=OWO&utm_term=ccswitch"> >>中国大陆地区的开发者请点击这里</a></td>
 </tr>
 
 <tr>
@@ -107,13 +105,8 @@ Registrieren Sie sich jetzt über <a href="https://pateway.ai/?ch=etzpm8&aff=WB6
 </tr>
 
 <tr>
-<td width="180"><a href="https://lemondata.cc/r/FFX1ZDUP"><img src="assets/partners/logos/lemondata.png" alt="LemonData" width="150"></a></td>
-<td>Danke an LemonData für die Unterstützung dieses Projekts! LemonData ist eine leistungsstarke KI-API-Aggregationsplattform — ein API-Schlüssel für mehr als 300 Modelle, darunter GPT, Claude, Gemini, DeepSeek und weitere. Alle Modelle zu Preisen 30–70 % unter den offiziellen Tarifen, mit automatischem Failover, intelligentem Routing und unbegrenzter Nebenläufigkeit. Neukunden erhalten bei der Registrierung sofort 1 $ Gratisguthaben — registrieren Sie sich über <a href="https://lemondata.cc/r/FFX1ZDUP">diesen Link</a>, um Ihren Bonus einzulösen und sofort mit dem Entwickeln zu beginnen</strong>!</td>
-</tr>
-
-<tr>
-<td width="180"><a href="https://ctok.ai"><img src="assets/partners/logos/ctok.png" alt="CTok" width="150"></a></td>
-<td>Danke an CTok.ai für die Unterstützung dieses Projekts! CTok.ai widmet sich dem Aufbau einer Komplettlösung für KI-Programmierwerkzeuge. Wir bieten professionelle Claude-Code-Pakete und Dienste einer technischen Community, mit Unterstützung für Google Gemini und OpenAI Codex. Durch sorgfältig gestaltete Pläne und eine professionelle Tech-Community geben wir Entwicklern verlässliche Servicegarantien und kontinuierlichen technischen Support an die Hand und machen KI-gestützte Programmierung zu einem echten Produktivitätswerkzeug. Klicken Sie <a href="https://ctok.ai">hier</a>, um sich zu registrieren!</td>
+<td width="180"><a href="https://etok.ai"><img src="assets/partners/logos/etok.png" alt="ETok" width="150"></a></td>
+<td>Danke an ETok.ai für die Unterstützung dieses Projekts! ETok.ai widmet sich dem Aufbau einer Komplettlösung für KI-Programmierwerkzeuge. Wir bieten professionelle Claude-Code-Pakete und Dienste einer technischen Community, mit Unterstützung für Google Gemini und OpenAI Codex. Durch sorgfältig gestaltete Pläne und eine professionelle Tech-Community geben wir Entwicklern verlässliche Servicegarantien und kontinuierlichen technischen Support an die Hand und machen KI-gestützte Programmierung zu einem echten Produktivitätswerkzeug. Klicken Sie <a href="https://etok.ai">hier</a>, um sich zu registrieren!</td>
 </tr>
 
 <tr>
@@ -146,19 +139,29 @@ Registrieren Sie sich jetzt über <a href="https://pateway.ai/?ch=etzpm8&aff=WB6
 <td>Atlas Cloud ist eine vollmodale KI-Inferenzplattform, die Entwicklern über eine einzige KI-API Zugriff auf Videogenerierung, Bildgenerierung und LLM-APIs bietet. Statt mehrere Anbieterintegrationen zu verwalten, verbinden Sie sich einmal und erhalten einheitlichen Zugriff auf mehr als 300 kuratierte Modelle über alle Modalitäten hinweg. Sehen Sie sich die neue <a href="https://www.atlascloud.ai/coding-plan?utm_source=github&utm_campaign=cc-switch">Coding-Plan</a>-Aktion von Atlas Cloud für kostengünstigeren API-Zugang an!</td>
 </tr>
 
+<tr>
+<td width="180"><a href="https://www.ccsub.net/register?ref=Y6Z8DXEA"><img src="assets/partners/logos/ccsub.svg" alt="CCSub" width="150"></a></td>
+<td>Danke an CCSub für die Unterstützung dieses Projekts! CCSub ist eine zuverlässige und kostengünstige AI-API-Relay-Plattform — Ihr direkter Ersatz für ein Claude.ai-Abonnement. Mit einem einzigen API-Schlüssel erhalten Sie Zugriff auf Claude Opus 4.8, Sonnet, Haiku, GPT-5, Gemini und DeepSeek zu etwa 30 % der Kosten der direkten API-Nutzung — ohne VPN, weltweit nutzbar. Kompatibel mit Claude Code, Codex, Cursor, Cline, Continue, Windsurf und allen gängigen AI-Coding-Tools. Registrieren Sie sich über <a href="https://www.ccsub.net/register?ref=Y6Z8DXEA">diesen Link</a> und erhalten Sie $5 Startguthaben bei der Anmeldung.</td>
+</tr>
+
+<tr>
+<td width="180"><a href="https://unity2.ai/register?source=ccs"><img src="assets/partners/logos/unity2.jpg" alt="Unity2.ai" width="150"></a></td>
+<td>Danke an Unity2.ai für die Unterstützung dieses Projekts! Unity2.ai ist eine leistungsstarke AI-Modell-API-Relay-Plattform für Einzelentwickler, Teams und Unternehmen. Sie wird seit Langem von führenden Unternehmen in China genutzt, verarbeitet täglich über 30 Milliarden Tokens und unterstützt hohe Parallelität auf 5.000-RPM-Niveau. Geboten werden Guthaben-Abrechnung, Ersteinzahlungsbonus, Kombi-Abonnements, Firmenrechnungen und persönliche Betreuung. Registrieren Sie sich über <a href="https://unity2.ai/register?source=ccs">diesen Link</a> und erhalten Sie $2 Guthaben, plus weitere $10 für den Beitritt zur offiziellen Gruppe — bis zu $12 Gratis-Guthaben!</td>
+</tr>
+
 </table>
 
 </details>
 
 ## Warum CC Switch?
 
-Modernes KI-gestütztes Programmieren stützt sich auf CLI-Werkzeuge wie Claude Code, Codex, Gemini CLI, OpenCode und OpenClaw — doch jedes hat sein eigenes Konfigurationsformat. Der Wechsel des API-Anbieters bedeutet, JSON-, TOML- oder `.env`-Dateien von Hand zu bearbeiten, und es gibt keine einheitliche Möglichkeit, MCP und Skills über mehrere Werkzeuge hinweg zu verwalten.
+Modernes KI-gestütztes Programmieren stützt sich auf Werkzeuge wie Claude Code, Claude Desktop, Codex, Gemini CLI, OpenCode, OpenClaw und Hermes — doch jedes hat sein eigenes Konfigurationsformat. Der Wechsel des API-Anbieters bedeutet, JSON-, TOML- oder `.env`-Dateien von Hand zu bearbeiten, und es gibt keine einheitliche Möglichkeit, MCP und Skills über mehrere Werkzeuge hinweg zu verwalten.
 
-**CC Switch** gibt Ihnen eine einzige Desktop-App, um alle fünf CLI-Werkzeuge zu verwalten. Statt Konfigurationsdateien von Hand zu bearbeiten, erhalten Sie eine visuelle Oberfläche, um Anbieter mit einem Klick zu importieren und sofort zwischen ihnen zu wechseln — mit 50+ integrierten Anbieter-Presets, einheitlicher MCP- und Skills-Verwaltung und schnellem Umschalten über das System-Tray. Das Ganze gestützt auf eine zuverlässige SQLite-Datenbank mit atomaren Schreibvorgängen, die Ihre Konfigurationen vor Beschädigung schützen.
+**CC Switch** gibt Ihnen eine einzige Desktop-App, um alle unterstützten KI-Werkzeuge zu verwalten. Statt Konfigurationsdateien von Hand zu bearbeiten, erhalten Sie eine visuelle Oberfläche, um Anbieter mit einem Klick zu importieren und sofort zwischen ihnen zu wechseln — mit 50+ integrierten Anbieter-Presets, einheitlicher MCP- und Skills-Verwaltung und schnellem Umschalten über das System-Tray. Das Ganze gestützt auf eine zuverlässige SQLite-Datenbank mit atomaren Schreibvorgängen, die Ihre Konfigurationen vor Beschädigung schützen.
 
-- **Eine App, fünf CLI-Werkzeuge** — Verwalten Sie Claude Code, Codex, Gemini CLI, OpenCode und OpenClaw über eine einzige Oberfläche
+- **Eine App, sieben Werkzeuge** — Verwalten Sie Claude Code, Claude Desktop, Codex, Gemini CLI, OpenCode, OpenClaw und Hermes über eine einzige Oberfläche
 - **Kein manuelles Bearbeiten mehr** — 50+ Anbieter-Presets einschließlich AWS Bedrock, NVIDIA NIM und Community-Relays; einfach auswählen und umschalten
-- **Einheitliche MCP- & Skills-Verwaltung** — Ein Panel zur Verwaltung von MCP-Servern und Skills über vier Apps hinweg mit bidirektionaler Synchronisierung
+- **Einheitliche MCP- & Skills-Verwaltung** — Ein Panel zur Verwaltung von MCP-Servern und Skills für Claude, Codex, Gemini, OpenCode und Hermes mit bidirektionaler Synchronisierung
 - **Schnellumschaltung über System-Tray** — Wechseln Sie Anbieter sofort über das Tray-Menü, ohne die vollständige App öffnen zu müssen
 - **Cloud-Synchronisierung** — Synchronisieren Sie Anbieterdaten geräteübergreifend über Dropbox, OneDrive, iCloud oder WebDAV-Server
 - **Plattformübergreifend** — Native Desktop-App für Windows, macOS und Linux, gebaut mit Tauri 2
@@ -172,12 +175,12 @@ Modernes KI-gestütztes Programmieren stützt sich auf CLI-Werkzeuge wie Claude 
 
 ## Funktionen
 
-[Vollständiges Changelog](CHANGELOG.md) | [Release Notes](docs/release-notes/v3.15.0-en.md)
+[Vollständiges Changelog](CHANGELOG.md) | [Release Notes](docs/release-notes/v3.16.1-en.md)
 
 ### Anbieterverwaltung
 
-- **5 CLI-Werkzeuge, 50+ Presets** — Claude Code, Codex, Gemini CLI, OpenCode, OpenClaw; Schlüssel kopieren und mit einem Klick importieren
-- **Universelle Anbieter** — Eine Konfiguration synchronisiert sich mit mehreren Apps (OpenCode, OpenClaw)
+- **7 unterstützte Werkzeuge, 50+ Presets** — Claude Code, Claude Desktop, Codex, Gemini CLI, OpenCode, OpenClaw, Hermes; Schlüssel kopieren und mit einem Klick importieren
+- **Universelle Anbieter** — Eine Konfiguration synchronisiert sich mit Claude Code, Codex und Gemini CLI
 - Umschaltung mit einem Klick, Schnellzugriff über System-Tray, Sortierung per Drag-and-drop, Import/Export
 
 ### Proxy & Failover
@@ -187,7 +190,7 @@ Modernes KI-gestütztes Programmieren stützt sich auf CLI-Werkzeuge wie Claude 
 
 ### MCP, Prompts & Skills
 
-- **Einheitliches MCP-Panel** — Verwalten Sie MCP-Server über 4 Apps hinweg mit bidirektionaler Synchronisierung und Deep-Link-Import
+- **Einheitliches MCP-Panel** — Verwalten Sie MCP-Server für Claude, Codex, Gemini, OpenCode und Hermes mit bidirektionaler Synchronisierung und Deep-Link-Import
 - **Prompts** — Markdown-Editor mit App-übergreifender Synchronisierung (CLAUDE.md / AGENTS.md / GEMINI.md) und Backfill-Schutz
 - **Skills** — Installation mit einem Klick aus GitHub-Repositorys oder ZIP-Dateien, Verwaltung eigener Repositorys, mit Unterstützung für Symlinks und Dateikopien
 
@@ -197,21 +200,21 @@ Modernes KI-gestütztes Programmieren stützt sich auf CLI-Werkzeuge wie Claude 
 
 ### Session Manager & Workspace
 
-- Durchsuchen, suchen und stellen Sie den Gesprächsverlauf über alle Apps hinweg wieder her
+- Gesprächsverlauf aus unterstützten Sitzungsquellen durchsuchen, suchen und wiederherstellen
 - **Workspace-Editor** (OpenClaw) — Bearbeiten Sie Agent-Dateien (AGENTS.md, SOUL.md usw.) mit Markdown-Vorschau
 
 ### System & Plattform
 
 - **Cloud-Synchronisierung** — Eigenes Konfigurationsverzeichnis (Dropbox, OneDrive, iCloud, NAS) und WebDAV-Server-Synchronisierung
 - **Deep Link** (`ccswitch://`) — Importieren Sie Anbieter, MCP-Server, Prompts und Skills per URL
-- Dunkles / Helles / System-Theme, automatischer Start, automatischer Updater, atomare Schreibvorgänge, automatische Backups, i18n (zh/en/ja)
+- Dunkles / Helles / System-Theme, automatischer Start, automatischer Updater, atomare Schreibvorgänge, automatische Backups, i18n (zh/zh-TW/en/ja)
 
 ## FAQ
 
 <details>
-<summary><strong>Welche KI-CLI-Werkzeuge unterstützt CC Switch?</strong></summary>
+<summary><strong>Welche KI-Werkzeuge unterstützt CC Switch?</strong></summary>
 
-CC Switch unterstützt fünf Werkzeuge: **Claude Code**, **Codex**, **Gemini CLI**, **OpenCode** und **OpenClaw**. Jedes Werkzeug verfügt über dedizierte Anbieter-Presets und Konfigurationsverwaltung.
+CC Switch unterstützt sieben Werkzeuge: **Claude Code**, **Claude Desktop**, **Codex**, **Gemini CLI**, **OpenCode**, **OpenClaw** und **Hermes**. Jedes Werkzeug verfügt über dedizierte Anbieter-Presets und Konfigurationsverwaltung.
 
 </details>
 
@@ -280,8 +283,8 @@ Ausführliche Anleitungen zu jeder Funktion finden Sie im **[Benutzerhandbuch](d
 
 - **MCP**: Klicken Sie auf die Schaltfläche „MCP" → Server über Vorlagen oder eigene Konfiguration hinzufügen → Synchronisierung pro App umschalten
 - **Prompts**: Klicken Sie auf „Prompts" → Presets mit dem Markdown-Editor erstellen → Aktivieren, um mit den Live-Dateien zu synchronisieren
-- **Skills**: Klicken Sie auf „Skills" → GitHub-Repositorys durchsuchen → mit einem Klick in allen Apps installieren
-- **Sessions**: Klicken Sie auf „Sessions" → Gesprächsverlauf über alle Apps hinweg durchsuchen, suchen und wiederherstellen
+- **Skills**: Klicken Sie auf „Skills" → GitHub-Repositorys durchsuchen → mit einem Klick in unterstützte Apps installieren
+- **Sessions**: Klicken Sie auf „Sessions" → Gesprächsverlauf aus unterstützten Sitzungsquellen durchsuchen, suchen und wiederherstellen
 
 > **Hinweis**: Beim Erststart können Sie bestehende CLI-Werkzeug-Konfigurationen manuell als Standardanbieter importieren.
 
@@ -494,7 +497,7 @@ pnpm test:unit --coverage
 │   ├── lib/
 │   │   ├── api/                # Tauri-API-Wrapper (typsicher)
 │   │   └── query/              # TanStack-Query-Konfiguration
-│   ├── locales/                # Übersetzungen (zh/en/ja)
+│   ├── locales/                # Übersetzungen (zh/zh-TW/en/ja)
 │   ├── config/                 # Presets (providers/mcp)
 │   └── types/                  # TypeScript-Definitionen
 ├── src-tauri/                  # Backend (Rust)

@@ -118,6 +118,7 @@ export function useSettingsForm(): UseSettingsFormResult {
       skipClaudeOnboarding: data.skipClaudeOnboarding ?? false,
       preserveCodexOfficialAuthOnSwitch:
         data.preserveCodexOfficialAuthOnSwitch ?? false,
+      unifyCodexSessionHistory: data.unifyCodexSessionHistory ?? false,
       telegramBot: {
         ...data.telegramBot,
         enabled: data.telegramBot?.enabled ?? false,
@@ -152,6 +153,7 @@ export function useSettingsForm(): UseSettingsFormResult {
             enableClaudePluginIntegration: false,
             skipClaudeOnboarding: false,
             preserveCodexOfficialAuthOnSwitch: false,
+            unifyCodexSessionHistory: false,
             telegramBot: {
               enabled: false,
               token: "",
@@ -198,6 +200,7 @@ export function useSettingsForm(): UseSettingsFormResult {
         skipClaudeOnboarding: serverData.skipClaudeOnboarding ?? false,
         preserveCodexOfficialAuthOnSwitch:
           serverData.preserveCodexOfficialAuthOnSwitch ?? false,
+        unifyCodexSessionHistory: serverData.unifyCodexSessionHistory ?? false,
         telegramBot: {
           ...serverData.telegramBot,
           enabled: serverData.telegramBot?.enabled ?? false,

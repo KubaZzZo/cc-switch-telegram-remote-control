@@ -62,6 +62,8 @@ export interface UsageScript {
   baseUrl?: string; // 用量查询专用的 Base URL（通用和 NewAPI 模板使用）
   accessToken?: string; // 访问令牌（NewAPI 模板使用）
   userId?: string; // 用户ID（NewAPI 模板使用）
+  accessKeyId?: string; // 火山方舟 AccessKey ID（用量查询签名用，与推理 Key 分离）
+  secretAccessKey?: string; // 火山方舟 SecretAccessKey
   codingPlanProvider?: string; // Coding Plan 供应商标识（如 "kimi", "zhipu", "minimax"）
   autoQueryInterval?: number; // 自动查询间隔（单位：分钟，0 表示禁用）
   autoIntervalMinutes?: number; // 自动查询间隔（分钟）- 别名字段
@@ -107,16 +109,12 @@ export interface UsageResult {
   error?: string;
 }
 
-// 供应商单独的模型测试配置
+// 供应商单独的连通检测配置（覆盖全局配置）
 export interface ProviderTestConfig {
   // 是否启用单独配置（false 时使用全局配置）
   enabled: boolean;
-  // 测试用的模型名称（覆盖全局配置）
-  testModel?: string;
   // 超时时间（秒）
   timeoutSecs?: number;
-  // 测试提示词
-  testPrompt?: string;
   // 降级阈值（毫秒）
   degradedThresholdMs?: number;
   // 最大重试次数
@@ -219,6 +217,8 @@ export interface ProviderMeta {
   codexFastMode?: boolean;
   // Codex Responses -> Chat Completions reasoning capability metadata
   codexChatReasoning?: CodexChatReasoning;
+  // Custom User-Agent for local proxy routing. Only applied by the local proxy.
+  customUserAgent?: string;
   // 供应商类型（用于识别 Copilot 等特殊供应商）
   providerType?: string;
   // GitHub Copilot 关联账号 ID（旧字段，保留兼容读取）
@@ -289,6 +289,20 @@ export interface WebDavSyncSettings {
   status?: WebDavSyncStatus;
 }
 
+// S3 同步配置
+export interface S3SyncSettings {
+  enabled?: boolean;
+  autoSync?: boolean;
+  region?: string;
+  bucket?: string;
+  accessKeyId?: string;
+  secretAccessKey?: string;
+  endpoint?: string;
+  remoteRoot?: string;
+  profile?: string;
+  status?: WebDavSyncStatus;
+}
+
 export interface TelegramBotSettings {
   enabled?: boolean;
   token?: string;
@@ -343,6 +357,11 @@ export interface Settings {
   enableFailoverToggle?: boolean;
   // Preserve Codex ChatGPT login in auth.json when switching third-party providers
   preserveCodexOfficialAuthOnSwitch?: boolean;
+  // Run official Codex under the shared "custom" provider id so future
+  // sessions share one resume-history bucket with third-party providers
+  unifyCodexSessionHistory?: boolean;
+  // User opted in (enable dialog checkbox) to migrate existing official sessions
+  unifyCodexMigrateExisting?: boolean;
   // User has confirmed the failover toggle first-run notice
   failoverConfirmed?: boolean;
   // User has confirmed the first-run welcome notice
@@ -389,6 +408,9 @@ export interface Settings {
 
   // ===== WebDAV v2 同步设置 =====
   webdavSync?: WebDavSyncSettings;
+
+  // ===== S3 同步设置 =====
+  s3Sync?: S3SyncSettings;
 
   telegramBot?: TelegramBotSettings;
 
