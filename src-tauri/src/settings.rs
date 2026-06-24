@@ -179,6 +179,52 @@ impl WebDavSyncSettings {
 /// 本机自动迁移状态。
 ///
 /// 这里记录的是本机启动时执行过的一次性迁移；标记不随数据库同步。
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+#[serde(rename_all = "camelCase")]
+pub struct TelegramBotSettings {
+    #[serde(default)]
+    pub enabled: bool,
+    #[serde(default)]
+    pub token: String,
+    #[serde(default)]
+    pub allowed_chat_ids: String,
+    #[serde(default)]
+    pub codex_restart_command: String,
+    #[serde(default)]
+    pub codex_restart_force_stop: bool,
+}
+
+impl Default for TelegramBotSettings {
+    fn default() -> Self {
+        Self {
+            enabled: false,
+            token: String::new(),
+            allowed_chat_ids: String::new(),
+            codex_restart_command: "codex".to_string(),
+            codex_restart_force_stop: false,
+        }
+    }
+}
+
+impl TelegramBotSettings {
+    pub fn normalize(&mut self) {
+        self.token = self.token.trim().to_string();
+        self.allowed_chat_ids = self.allowed_chat_ids.trim().to_string();
+        self.codex_restart_command = self.codex_restart_command.trim().to_string();
+        if self.codex_restart_command.is_empty() {
+            self.codex_restart_command = "codex".to_string();
+        }
+    }
+
+    fn is_empty_default(&self) -> bool {
+        !self.enabled
+            && self.token.is_empty()
+            && self.allowed_chat_ids.is_empty()
+            && self.codex_restart_command == "codex"
+            && !self.codex_restart_force_stop
+    }
+}
+
 #[derive(Debug, Clone, Serialize, Deserialize, Default)]
 #[serde(rename_all = "camelCase")]
 pub struct LocalMigrations {
@@ -322,6 +368,9 @@ pub struct AppSettings {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub webdav_sync: Option<WebDavSyncSettings>,
 
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub telegram_bot: Option<TelegramBotSettings>,
+
     // ===== WebDAV 备份设置（旧版，保留向后兼容）=====
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub webdav_backup: Option<serde_json::Value>,
@@ -392,6 +441,7 @@ impl Default for AppSettings {
             skill_sync_method: SyncMethod::default(),
             skill_storage_location: SkillStorageLocation::default(),
             webdav_sync: None,
+            telegram_bot: None,
             webdav_backup: None,
             backup_interval_hours: None,
             backup_retain_count: None,
@@ -465,6 +515,13 @@ impl AppSettings {
             sync.normalize();
             if sync.is_empty() {
                 self.webdav_sync = None;
+            }
+        }
+
+        if let Some(telegram) = &mut self.telegram_bot {
+            telegram.normalize();
+            if telegram.is_empty_default() {
+                self.telegram_bot = None;
             }
         }
     }
@@ -569,6 +626,9 @@ pub fn get_settings_for_frontend() -> AppSettings {
     let mut settings = get_settings();
     if let Some(sync) = &mut settings.webdav_sync {
         sync.password.clear();
+    }
+    if let Some(telegram) = &mut settings.telegram_bot {
+        telegram.token.clear();
     }
     settings.webdav_backup = None;
     settings

@@ -21,6 +21,17 @@ fn merge_settings_for_save(
         }
         _ => {}
     }
+    match (&mut incoming.telegram_bot, &existing.telegram_bot) {
+        (None, _) => {
+            incoming.telegram_bot = existing.telegram_bot.clone();
+        }
+        (Some(incoming_telegram), Some(existing_telegram))
+            if incoming_telegram.token.is_empty() && !existing_telegram.token.is_empty() =>
+        {
+            incoming_telegram.token = existing_telegram.token.clone();
+        }
+        _ => {}
+    }
     if incoming.local_migrations.is_none() {
         incoming.local_migrations = existing.local_migrations.clone();
     } else if let (Some(incoming_migrations), Some(existing_migrations)) =
@@ -53,7 +64,15 @@ pub async fn get_settings() -> Result<crate::settings::AppSettings, String> {
 pub async fn save_settings(settings: crate::settings::AppSettings) -> Result<bool, String> {
     let existing = crate::settings::get_settings();
     let merged = merge_settings_for_save(settings, &existing);
+    let telegram_changed = merged.telegram_bot != existing.telegram_bot;
     crate::settings::update_settings(merged).map_err(|e| e.to_string())?;
+    if telegram_changed {
+        if let Some(service) = crate::services::telegram_bot::global_service() {
+            if let Err(err) = service.apply_current_settings().await {
+                log::warn!("Failed to apply Telegram bot settings: {err}");
+            }
+        }
+    }
     Ok(true)
 }
 
@@ -103,7 +122,7 @@ mod tests {
     use super::merge_settings_for_save;
     use crate::settings::{
         AppSettings, CodexProviderTemplateMigration, CodexThirdPartyHistoryProviderBucketMigration,
-        LocalMigrations, WebDavSyncSettings,
+        LocalMigrations, TelegramBotSettings, WebDavSyncSettings,
     };
 
     #[test]
@@ -223,6 +242,38 @@ mod tests {
         assert_eq!(
             merged.webdav_sync.as_ref().map(|v| v.password.as_str()),
             Some("")
+        );
+    }
+
+    #[test]
+    fn save_settings_should_preserve_telegram_token_when_incoming_has_empty_token() {
+        let existing = AppSettings {
+            telegram_bot: Some(TelegramBotSettings {
+                enabled: true,
+                token: "123:secret".to_string(),
+                allowed_chat_ids: "1001".to_string(),
+                codex_restart_command: "codex".to_string(),
+                codex_restart_force_stop: false,
+            }),
+            ..AppSettings::default()
+        };
+
+        let incoming = AppSettings {
+            telegram_bot: Some(TelegramBotSettings {
+                enabled: true,
+                token: String::new(),
+                allowed_chat_ids: "1001".to_string(),
+                codex_restart_command: "codex".to_string(),
+                codex_restart_force_stop: false,
+            }),
+            ..AppSettings::default()
+        };
+
+        let merged = merge_settings_for_save(incoming, &existing);
+
+        assert_eq!(
+            merged.telegram_bot.as_ref().map(|v| v.token.as_str()),
+            Some("123:secret")
         );
     }
 
