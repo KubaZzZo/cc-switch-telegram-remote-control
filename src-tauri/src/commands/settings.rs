@@ -36,6 +36,17 @@ fn merge_settings_for_save(
         }
         _ => {}
     }
+    match (&mut incoming.telegram_bot, &existing.telegram_bot) {
+        (None, _) => {
+            incoming.telegram_bot = existing.telegram_bot.clone();
+        }
+        (Some(incoming_telegram), Some(existing_telegram))
+            if incoming_telegram.token.is_empty() && !existing_telegram.token.is_empty() =>
+        {
+            incoming_telegram.token = existing_telegram.token.clone();
+        }
+        _ => {}
+    }
     // local_migrations 是纯后端状态（迁移完成标记），前端没有合法的修改场景，
     // 无条件取现有值。若按 incoming 透传：后端清掉 marker（如关闭统一会话
     // 开关）后、前端 query 缓存刷新前的一次全量保存会把旧 marker 重放回来，
@@ -61,7 +72,16 @@ pub async fn save_settings(
     let unify_codex_changed =
         merged.unify_codex_session_history != existing.unify_codex_session_history;
     let unify_codex_enabled = merged.unify_codex_session_history;
+    let telegram_changed = merged.telegram_bot != existing.telegram_bot;
     crate::settings::update_settings(merged).map_err(|e| e.to_string())?;
+
+    if telegram_changed {
+        if let Some(service) = crate::services::telegram_bot::global_service() {
+            if let Err(err) = service.apply_current_settings().await {
+                log::warn!("Failed to apply Telegram bot settings: {err}");
+            }
+        }
+    }
 
     // 统一会话开关变更时立即重写当前官方 Codex 供应商的 live 配置，
     // 不必等下一次切换才生效。
@@ -279,7 +299,7 @@ mod tests {
     use crate::settings::{
         AppSettings, CodexOfficialHistoryUnifyMigration, CodexProviderTemplateMigration,
         CodexThirdPartyHistoryProviderBucketMigration, LocalMigrations, S3SyncSettings,
-        WebDavSyncSettings,
+        TelegramBotSettings, WebDavSyncSettings,
     };
 
     #[test]
@@ -457,6 +477,38 @@ mod tests {
                 .as_ref()
                 .map(|v| v.secret_access_key.as_str()),
             Some("secret")
+        );
+    }
+
+    #[test]
+    fn save_settings_should_preserve_telegram_token_when_incoming_has_empty_token() {
+        let existing = AppSettings {
+            telegram_bot: Some(TelegramBotSettings {
+                enabled: true,
+                token: "123:secret".to_string(),
+                allowed_chat_ids: "1001".to_string(),
+                codex_restart_command: "codex".to_string(),
+                codex_restart_force_stop: false,
+            }),
+            ..AppSettings::default()
+        };
+
+        let incoming = AppSettings {
+            telegram_bot: Some(TelegramBotSettings {
+                enabled: true,
+                token: String::new(),
+                allowed_chat_ids: "1001".to_string(),
+                codex_restart_command: "codex".to_string(),
+                codex_restart_force_stop: false,
+            }),
+            ..AppSettings::default()
+        };
+
+        let merged = merge_settings_for_save(incoming, &existing);
+
+        assert_eq!(
+            merged.telegram_bot.as_ref().map(|v| v.token.as_str()),
+            Some("123:secret")
         );
     }
 

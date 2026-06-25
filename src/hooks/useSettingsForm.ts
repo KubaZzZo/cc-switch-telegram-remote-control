@@ -119,6 +119,15 @@ export function useSettingsForm(): UseSettingsFormResult {
       preserveCodexOfficialAuthOnSwitch:
         data.preserveCodexOfficialAuthOnSwitch ?? false,
       unifyCodexSessionHistory: data.unifyCodexSessionHistory ?? false,
+      telegramBot: {
+        ...data.telegramBot,
+        enabled: data.telegramBot?.enabled ?? false,
+        token: data.telegramBot?.token ?? "",
+        allowedChatIds: data.telegramBot?.allowedChatIds ?? "",
+        codexRestartCommand:
+          data.telegramBot?.codexRestartCommand?.trim() || "codex",
+        codexRestartForceStop: data.telegramBot?.codexRestartForceStop ?? false,
+      },
       claudeConfigDir: sanitizeDir(data.claudeConfigDir),
       codexConfigDir: sanitizeDir(data.codexConfigDir),
       geminiConfigDir: sanitizeDir(data.geminiConfigDir),
@@ -145,6 +154,13 @@ export function useSettingsForm(): UseSettingsFormResult {
             skipClaudeOnboarding: false,
             preserveCodexOfficialAuthOnSwitch: false,
             unifyCodexSessionHistory: false,
+            telegramBot: {
+              enabled: false,
+              token: "",
+              allowedChatIds: "",
+              codexRestartCommand: "codex",
+              codexRestartForceStop: false,
+            },
             language: readPersistedLanguage(),
           } as SettingsFormState);
 
@@ -185,6 +201,16 @@ export function useSettingsForm(): UseSettingsFormResult {
         preserveCodexOfficialAuthOnSwitch:
           serverData.preserveCodexOfficialAuthOnSwitch ?? false,
         unifyCodexSessionHistory: serverData.unifyCodexSessionHistory ?? false,
+        telegramBot: {
+          ...serverData.telegramBot,
+          enabled: serverData.telegramBot?.enabled ?? false,
+          token: serverData.telegramBot?.token ?? "",
+          allowedChatIds: serverData.telegramBot?.allowedChatIds ?? "",
+          codexRestartCommand:
+            serverData.telegramBot?.codexRestartCommand?.trim() || "codex",
+          codexRestartForceStop:
+            serverData.telegramBot?.codexRestartForceStop ?? false,
+        },
         claudeConfigDir: sanitizeDir(serverData.claudeConfigDir),
         codexConfigDir: sanitizeDir(serverData.codexConfigDir),
         geminiConfigDir: sanitizeDir(serverData.geminiConfigDir),

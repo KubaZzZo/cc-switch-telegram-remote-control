@@ -869,7 +869,19 @@
       "defaultCostMultiplierRequired": "Default multiplier is required",
       "defaultCostMultiplierInvalid": "Invalid multiplier format"
     },
-    "saveFailedGeneric": "Save failed, please try again"
+    "saveFailedGeneric": "Save failed, please try again",
+    "telegramBot": {
+      "title": "Telegram Remote Control",
+      "enabled": "Enable Telegram Bot",
+      "enabledDescription": "Allow trusted Telegram sessions to view and switch providers while CC Switch is running.",
+      "token": "Bot Token",
+      "tokenPlaceholder": "Leave empty to keep the saved token",
+      "allowedChatIds": "Allowed Chat IDs",
+      "codexRestartCommand": "Codex Restart Command",
+      "forceStop": "Force stop existing Codex process",
+      "forceStopDescription": "Only the locally saved command can be launched. Telegram messages cannot supply shell commands.",
+      "safetyHint": "Do not expose arbitrary command execution via Telegram. Restarts only use the locally saved command."
+    }
   },
   "apps": {
     "claude": "Claude",

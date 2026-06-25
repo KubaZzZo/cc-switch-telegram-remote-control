@@ -869,7 +869,19 @@
       "defaultCostMultiplierRequired": "デフォルト倍率は必須です",
       "defaultCostMultiplierInvalid": "デフォルト倍率の形式が正しくありません"
     },
-    "saveFailedGeneric": "保存に失敗しました。もう一度お試しください"
+    "saveFailedGeneric": "保存に失敗しました。もう一度お試しください",
+    "telegramBot": {
+      "title": "Telegram リモートコントロール",
+      "enabled": "Telegram Bot を有効化",
+      "enabledDescription": "信頼できる Telegram セッションが CC Switch の実行中にプロバイダーを確認・切り替えできるようにします。",
+      "token": "Bot Token",
+      "tokenPlaceholder": "空欄の場合は保存済みの Token を維持",
+      "allowedChatIds": "許可する Chat ID",
+      "codexRestartCommand": "Codex 再起動コマンド",
+      "forceStop": "既存の Codex プロセスを強制停止",
+      "forceStopDescription": "ローカルに保存されたコマンドのみ起動できます。Telegram メッセージからシェルコマンドを指定することはできません。",
+      "safetyHint": "Telegram 経由での任意のコマンド実行を公開しないでください。再起動はローカルに保存されたコマンドのみを使用します。"
+    }
   },
   "apps": {
     "claude": "Claude",

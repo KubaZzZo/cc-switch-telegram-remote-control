@@ -303,6 +303,14 @@ export interface S3SyncSettings {
   status?: WebDavSyncStatus;
 }
 
+export interface TelegramBotSettings {
+  enabled?: boolean;
+  token?: string;
+  allowedChatIds?: string;
+  codexRestartCommand?: string;
+  codexRestartForceStop?: boolean;
+}
+
 export type RemoteSnapshotLayout = "current" | "legacy";
 
 // 远端快照信息（下载前预览）
@@ -403,6 +411,8 @@ export interface Settings {
 
   // ===== S3 同步设置 =====
   s3Sync?: S3SyncSettings;
+
+  telegramBot?: TelegramBotSettings;
 
   // ===== 备份策略设置 =====
   // Auto-backup interval in hours (0=disabled, default 24)

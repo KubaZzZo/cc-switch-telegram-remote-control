@@ -907,6 +907,16 @@ pub fn run() {
                 app.handle().clone(),
             );
             // 将同一个实例注入到全局状态，避免重复创建导致的不一致
+            let telegram_service =
+                crate::services::telegram_bot::init_global_service(Arc::new(app_state.clone()));
+            tauri::async_runtime::spawn({
+                let telegram_service = telegram_service.clone();
+                async move {
+                    if let Err(e) = telegram_service.apply_current_settings().await {
+                        log::warn!("Failed to start Telegram bot worker: {e}");
+                    }
+                }
+            });
             app.manage(app_state);
 
             // 从数据库加载日志配置并应用

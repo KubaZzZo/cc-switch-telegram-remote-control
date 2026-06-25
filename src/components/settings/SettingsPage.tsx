@@ -41,6 +41,7 @@ import { AppVisibilitySettings } from "@/components/settings/AppVisibilitySettin
 import { SkillStorageLocationSettings } from "@/components/settings/SkillStorageLocationSettings";
 import { SkillSyncMethodSettings } from "@/components/settings/SkillSyncMethodSettings";
 import { TerminalSettings } from "@/components/settings/TerminalSettings";
+import { TelegramBotSettings } from "@/components/settings/TelegramBotSettings";
 import { DirectorySettings } from "@/components/settings/DirectorySettings";
 import { ImportExportSection } from "@/components/settings/ImportExportSection";
 import { BackupListSection } from "@/components/settings/BackupListSection";
@@ -288,6 +289,10 @@ export function SettingsPage({
                         handleAutoSave({ preferredTerminal: terminal })
                       }
                     />
+                    <TelegramBotSettings
+                      settings={settings}
+                      onChange={updateSettings}
+                    />
                   </motion.div>
                 ) : null}
               </TabsContent>
@@ -511,28 +516,29 @@ export function SettingsPage({
               </TabsContent>
             </div>
 
-            {activeTab === "advanced" && settings && (
-              <div
-                className="flex-shrink-0 pt-4 border-t border-border-default"
-                style={{ backgroundColor: "hsl(var(--background))" }}
-              >
-                <div className="px-6 flex items-center justify-end gap-3">
-                  <Button onClick={handleSave} disabled={isSaving}>
-                    {isSaving ? (
-                      <span className="inline-flex items-center gap-2">
-                        <Loader2 className="h-4 w-4 animate-spin" />
-                        {t("settings.saving")}
-                      </span>
-                    ) : (
-                      <>
-                        <Save className="mr-2 h-4 w-4" />
-                        {t("common.save")}
-                      </>
-                    )}
-                  </Button>
+            {(activeTab === "advanced" || activeTab === "general") &&
+              settings && (
+                <div
+                  className="flex-shrink-0 pt-4 border-t border-border-default"
+                  style={{ backgroundColor: "hsl(var(--background))" }}
+                >
+                  <div className="px-6 flex items-center justify-end gap-3">
+                    <Button onClick={handleSave} disabled={isSaving}>
+                      {isSaving ? (
+                        <span className="inline-flex items-center gap-2">
+                          <Loader2 className="h-4 w-4 animate-spin" />
+                          {t("settings.saving")}
+                        </span>
+                      ) : (
+                        <>
+                          <Save className="mr-2 h-4 w-4" />
+                          {t("common.save")}
+                        </>
+                      )}
+                    </Button>
+                  </div>
                 </div>
-              </div>
-            )}
+              )}
           </div>
         </Tabs>
       )}
