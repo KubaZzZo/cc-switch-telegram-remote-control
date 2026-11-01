@@ -2,9 +2,9 @@ name: CI
 
 on:
   pull_request:
-    branches: [main]
+    branches: [main, telegram-bot-remote-control]
   push:
-    branches: [main]
+    branches: [main, telegram-bot-remote-control]
 
 concurrency:
   group: ci-${{ github.ref }}
